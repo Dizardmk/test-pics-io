@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { CommentsState, Comment } from "./commentsTypes";
+import { CommentsState, Comment } from "./comments-types";
 
 const initialState: CommentsState = {
   comments: [],

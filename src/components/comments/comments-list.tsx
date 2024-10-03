@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { useAppSelector, useAppDispatch } from "../hooks";
-import { Comment } from "../store/comments/commentsTypes";
-import { fetchComments } from "../store/comments/commentsSlice";
+import { useAppSelector, useAppDispatch } from "../../hooks";
+import { Comment } from "../../store/comments/comments-types";
+import { fetchComments } from "../../store/comments/comments-slice";
+import CommentsCard from "./comments-card";
 
 export default function CommentsList() {
   const comments = useAppSelector((state) => state.comments.comments);
@@ -25,14 +26,11 @@ export default function CommentsList() {
 
   return (
     <div>
-      <h1>Comments</h1>
-      <ul>
+      <h1 className="font-bold text-2xl my-4 ml-4">Comments</h1>
+
+      <ul className="flex flex-wrap gap-4 p-4 items-center justify-center">
         {comments.map((comment: Comment) => (
-          <li key={comment.id}>
-            <p>{comment.body}</p>
-            <p>By: {comment.user.username}</p>
-            <p>Likes: {comment.likes}</p>
-          </li>
+          <CommentsCard key={comment.id} {...comment} />
         ))}
       </ul>
     </div>
