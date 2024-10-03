@@ -1,7 +1,7 @@
 import { useAppSelector } from "../hooks/hooks";
 import { Comment } from "../store/comments/commentsTypes";
 
-export default function CommentsContent() {
+export default function CommentsList() {
   const comments = useAppSelector((state) => state.comments?.comments ?? []);
   const status = useAppSelector((state) => state.comments?.status ?? "idle");
   const error = useAppSelector((state) => state.comments?.error ?? null);

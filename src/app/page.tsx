@@ -1,12 +1,12 @@
 "use client";
 
 import StoreProvider from "./StoreProvider";
-import CommentsContent from "../components/CommentsContent";
+import CommentsList from "../components/CommentsList";
 
 export default function HomePage() {
   return (
     <StoreProvider>
-      <CommentsContent />
+      <CommentsList />
     </StoreProvider>
   );
 }
