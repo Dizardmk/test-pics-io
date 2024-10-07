@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../../hooks";
 import { Comment } from "../../store/comments/comments-types";
 import { fetchComments } from "../../store/comments/comments-slice";
+import CommentsLoader from "./comments-loader";
 import CommentsCard from "./comments-card";
 
 export default function CommentsList() {
@@ -17,7 +18,7 @@ export default function CommentsList() {
   }, [status, dispatch]);
 
   if (status === "loading") {
-    return <div>Loading comments...</div>;
+    return <CommentsLoader />;
   }
 
   if (status === "failed") {

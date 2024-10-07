@@ -7,15 +7,6 @@ const initialState: CommentsState = {
   error: null,
 };
 
-export const fetchComments = createAsyncThunk(
-  "comments/fetchComments",
-  async () => {
-    const response = await fetch("https://dummyjson.com/comments");
-    const data = await response.json();
-    return data.comments;
-  },
-);
-
 export const commentsSlice = createSlice({
   name: "comments",
   initialState,
@@ -40,6 +31,15 @@ export const commentsSlice = createSlice({
       });
   },
 });
+
+export const fetchComments = createAsyncThunk(
+  "comments/fetchComments",
+  async () => {
+    const response = await fetch("https://dummyjson.com/comments");
+    const data = await response.json();
+    return data.comments;
+  },
+);
 
 export const { initializeComments } = commentsSlice.actions;
 

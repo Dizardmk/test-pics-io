@@ -12,7 +12,7 @@ export default function CommentsCard({
 }: CommentsCardProps) {
   return (
     <li className="min-w-80">
-      <Card className="w-full max-w-2xl">
+      <Card>
         <CardHeader className="flex flex-row items-center gap-4">
           <Avatar>
             <AvatarFallback>{user.fullName.charAt(0)}</AvatarFallback>
